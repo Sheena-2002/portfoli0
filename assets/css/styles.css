@@ -514,3 +514,68 @@ img {
 .work__img:hover .hover-text {
     opacity: 1;
 }
+
+/* ===== EDUCATION HOVER CARDS ===== */
+.education__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding-top: 1rem;
+}
+.education__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.12);
+}
+.education__img {
+  display: block;
+  width: 100%;
+  height: 200px; /* consistent display height for logos */
+  object-fit: contain; /* preserve logo aspect ratio without cropping */
+  object-position: center;
+  background: #fff; /* ensure logos display on consistent background */
+  transition: transform 0.6s ease;
+}
+.education__card:hover .education__img {
+  transform: scale(1.02);
+}
+
+@media screen and (min-width: 576px) {
+  .education__img { height: 240px; }
+}
+@media screen and (min-width: 992px) {
+  .education__img { height: 280px; }
+}
+.education__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 60%);
+  color: #fff;
+  padding: 1.25rem;
+  transform: translateY(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0;
+}
+.education__card:hover .education__overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+.education__overlay .education__title {
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.education__overlay p {
+  color: rgba(255,255,255,0.9);
+  margin: 0.15rem 0;
+  font-size: 0.95rem;
+}
+
+@media screen and (min-width: 576px) {
+  .education__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
