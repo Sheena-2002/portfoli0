@@ -1,0 +1,53 @@
+/* Page-specific styles (kept minimal so global maroon theme and circuit background apply) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* do not override background or text color: inherit from main theme */
+    background: transparent;
+    color: inherit;
+}
+
+.app-icon {
+    width: 90px;
+    height: 90px;
+    margin: 15px;
+    background-color: rgba(255,255,255,0.03);
+    border-radius: 22px;
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.12);
+}
+
+section { max-width: 700px; margin: 28px auto; padding: 32px 24px; border-radius: 12px; }
+
+@media (max-width: 768px) {
+    section { margin: 14px 8px; padding: 18px 10px; }
+}
+
+/* Document list layout moved from inline styles in index.html */
+.doc-list-container{
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+.doc-list-title{
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #222;
+}
+.doc-list{ list-style: none; padding: 0; }
+.doc-list li{ margin: 0 0 16px 0; }
+.doc-link{
+    display:block;
+    padding:12px 18px;
+    background:#f5f5f5;
+    border-radius:6px;
+    color:#222;
+    text-decoration:none;
+    font-size:1.1rem;
+    transition: background .2s;
+}
+.doc-link:hover{ background:#f0e6e6; color:#800000; }

@@ -5,11 +5,9 @@
   --header-height: 3rem;
   --font-semi: 600;
   /*===== Colores =====*/
-  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-  /* HSL color mode */
-  --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
-  --second-color: hsl(var(--hue-color), 56%, 12%);
+  /*Theme changed to Maroon*/
+  --first-color: #800000; /* maroon */
+  --second-color: #4d0000; /* dark maroon / text */
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -48,6 +46,33 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+}
+
+/* Circuit background (only used on the index page via `body.circuit-bg`) */
+body.circuit-bg {
+  background-color: #ffffff;
+}
+body.circuit-bg::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* path relative to this CSS file: assets/css/ -> assets/img/ */
+  background-image: url("../img/circuit-bg.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 300px; /* adjust to taste */
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -2;
+}
+/* subtle maroon tint overlay so pattern blends with theme */
+body.circuit-bg::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(128,0,0,0.02), rgba(128,0,0,0.02));
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1, h2, p {
@@ -94,6 +119,19 @@ img {
 .section {
   padding-top: 3rem;
   padding-bottom: 2rem;
+}
+
+/* Make content panels slightly more opaque over the circuit background for readability */
+.section, section {
+  background: rgba(255,255,255,0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+}
+
+@media screen and (max-width: 767px) {
+  .section, section {
+    background: rgba(255,255,255,0.10);
+  }
 }
 
 /*===== LAYOUT =====*/
@@ -183,6 +221,19 @@ img {
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
+  box-shadow: none;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: -5%;
+  right: -5%;
+  bottom: -2rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  z-index: -1;
 }
 .home__data {
   align-self: center;
@@ -304,6 +355,105 @@ img {
 }
 .skills__img {
   border-radius: 0.5rem;
+}
+
+/* ===== SKILLS: Tabs & Certification Slider ===== */
+.skills__right {
+  text-align: center;
+  overflow: hidden; /* prevent slides from spilling into adjacent columns */
+  display: flex;
+  flex-direction: column; /* stack title, slider, dots vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ensure the right column centers in its grid cell when using bd-grid */
+.skills__container > .skills__right {
+  justify-self: center;
+  width: 100%;
+  max-width: 520px;
+}
+.skills__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.skills__tab {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--second-color);
+}
+.skills__tab.active {
+  background: var(--first-color);
+  color: #fff;
+  border-color: var(--first-color);
+}
+.skills__tab-content {
+  position: relative;
+}
+.skills__pane {
+  display: none;
+}
+.skills__pane.active {
+  display: block;
+}
+.cert-title {
+  color: var(--first-color);
+  margin-bottom: 0.75rem;
+  text-align: center;
+  width: 100%;
+}
+.cert-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cert-slides {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.cert-slide {
+  flex: 0 0 260px;
+}
+.cert-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.08);
+}
+.cert-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.08);
+}
+.cert-dots { display: none; }
+.cert-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.cert-dot.active { background: var(--first-color); }
+
+@media screen and (min-width: 768px) {
+  .cert-slides { width: 480px; }
+}
+
+/* ensure slider doesn't push into the left column on narrow viewports */
+@media screen and (min-width: 768px) {
+  .skills__container { align-items: center; }
 }
 
 /* ===== WORK =====*/
@@ -579,3 +729,20 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.cert-gallery {
+    overflow: hidden;
+}
+
+.cert-slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.cert-slide {
+    min-width: 100%;
+}
+.cert-slides {
+    transition: transform 0.35s ease-in-out;
+}
+

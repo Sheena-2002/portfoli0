@@ -9,9 +9,9 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Portfolio website complete</title>
+        <title>Sheena S | Analog IC Design Portfolio</title>
     </head>
-    <body>
+    <body class="circuit-bg">
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -146,8 +146,16 @@
                         </div>
                     </div>
                     
-                    <div>              
-                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                    <div class="skills__right">
+                        <h3 class="cert-title">Professional Certification</h3>
+                        <div class="cert-gallery">
+                            <div class="cert-slides">
+                                <div class="cert-slide"><img src="assets/img/cer1.png" alt="cert 1"></div>
+                                <div class="cert-slide"><img src="assets/img/cer2.png" alt="cert 2"></div>
+                                <div class="cert-slide"><img src="assets/img/cer1.png" alt="cert 3"></div>
+                                <div class="cert-slide"><img src="assets/img/cer1.png" alt="cert 3"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -262,12 +270,27 @@
             </div>
             <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
         </footer>
-
-
-        <!--===== SCROLL REVEAL =====-->
+          <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
-
+        <script src="assets/js/scrollreveal.js"></script>   
+    
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+        <script>
+const slides = document.querySelector(".cert-slides");
+const total = document.querySelectorAll(".cert-slide").length;
+let index = 0;
+
+slides.style.transform = "translateX(0%)";
+
+setTimeout(() => {
+    setInterval(() => {
+        index = (index + 1) % total;
+        slides.style.transform = `translateX(-${index * 55.55}%)`;
+    }, 1200);
+}, 100);
+</script>
+
+
     </body>
 </html>
