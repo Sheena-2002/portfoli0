@@ -26,7 +26,8 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
                         <li class="nav__item"><a href="#coursework" class="nav__link">Course Work</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work/Projects</a></li>
+                        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Prev_Work</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -215,6 +216,42 @@
                         <img src="assets/img/cs6.png" alt="">
                         <span class="hover-text">ECEN-681: Seminar</span>
                     </a>
+                </div>
+            </section>
+            <!--===== PROJECTS =====-->
+            <section class="projects section" id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects__container bd-grid">
+                    <div class="project-card">
+                        <h3>Analog IC Design</h3>
+                        <p>Fully Differential Op-Amp, IBM 180nm CMOS Aug–Dec 2025</p>
+                        <p>Designed telescopic op-amp with integrated CMFB; achieved >60 dB DC gain, 120 MHz GBW, ≥60° phase margin; performed electrical characterization and performance benchmarking across PVT corners via Monte Carlo mismatch analysis and postlayout PEX.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>RF / Mixed-Signal</h3>
+                        <p>Inductor-less Quadrature Receiver, 2.4 GHz (ECEN 665) Jan 2026–Present</p>
+                        <p>Implemented full 2.4 GHz RX chain (LNTA + passive mixer + TIA); met all specs: >40 dB gain, <3 dB NF, IIP3 > −5 dBm, IIP2 > 30 dBm, <20 mW power; applied gm/ID methodology on IBM 180nm.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Data Converters</h3>
+                        <p>SAR ADC Design, 250 MHz 8 ENOB (ECEN 607) Jan 2026–Present</p>
+                        <p>Designed SAR ADC (comparator, bootstrapped switches, cap DAC) at transistor level; 250 MHz BW, 8 ENOB, FoM >170 dB; performance benchmarking verified post-layout across corners in Cadence Spectre.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>RF IC Design</h3>
+                        <p>CMOS LNA Design for Zigbee RF Transceiver Jan–May 2026</p>
+                        <p>Designed and simulated a 1.9 GHz CMOS cascode LNA for Zigbee front-end in Cadence Spectre using realistic on-chip inductors; characterized I/O matching networks for optimal power transfer to on-chip and off-chip loads (50Ω).</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>HW Verification</h3>
+                        <p>Functional Verification of HTAX (HyperTransport Crossbar) Aug–Dec 2025</p>
+                        <p>Developed UVM-based automated test framework in SystemVerilog/Cadence Xcelium; constrained-random validation scripts identified a latent RTL bug; achieved 100% functional coverage and ≥95% block/expression coverage via vManager regressions.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Computer Arch.</h3>
+                        <p>L3 Cache & Memory Controller Policy Evaluation (PACIPV & EAF) Aug–Dec 2025</p>
+                        <p>Benchmarked DDR-interfacing L3 cache/memory controller policies vs. LRU/SRRIP using ZSim (C++) on PARSEC/SPEC CPU2006 (8-core, 16 MB LLC); built Python automation scripts to run simulations, parse logs, and generate IPC/MPKI performance benchmarking reports.</p>
+                    </div>
                 </div>
             </section>
             <!--===== WORK =====-->
