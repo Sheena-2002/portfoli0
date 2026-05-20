@@ -675,6 +675,7 @@ img {
   padding-top: 1rem;
 }
 .education__card {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
