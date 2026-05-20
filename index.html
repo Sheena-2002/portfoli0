@@ -9,6 +9,9 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
+        <!-- EmailJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
         <title>Sheena S | Analog IC Design Portfolio</title>
     </head>
     <body class="circuit-bg">
@@ -299,12 +302,13 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="SEND:)" class="contact__button button">
+                    <form id="contact-form" class="contact__form">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Message" cols="0" rows="10" class="contact__input" required></textarea>
+                        <input type="submit" value="SEND:)" class="contact__button button">
                     </form>
+                    <p id="contact-message" style="display:none; margin-top: 1rem;"></p>
                 </div>
             </section>
         </main>
@@ -317,7 +321,7 @@
                 <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
                 <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
             </div>
-            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
+            <p class="footer__copy">&#169; </p>
         </footer>
           <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
