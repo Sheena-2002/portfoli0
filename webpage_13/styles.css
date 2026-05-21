@@ -41,5 +41,58 @@ section { max-width: 700px; margin: 28px auto; padding: 32px 24px; border-radius
 }
 .doc-link:hover{ background:#f0e6e6; color:#800000; }
 
-.course-header{ max-width: 700px; margin: 28px auto 0; padding: 0 24px; }
+..course-header{ max-width: 700px; margin: 28px auto 0; padding: 0 24px; }
 .course-header-img{ width: 100%; border-radius: 12px; display:block; object-fit:cover; }
+
+.lab-section,
+.assignment-section {
+    max-width: 900px;
+    margin: 32px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 28px 24px;
+}
+.lab-section h2,
+.assignment-section h2 {
+    margin-bottom: 20px;
+    color: #3a1d1d;
+}
+.lab-tabs {
+    display: grid;
+    gap: 18px;
+}
+.lab-tab {
+    border: 1px solid #e1d8d8;
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: #faf7f7;
+}
+.lab-tab h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    color: #351919;
+}
+.lab-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.lab-actions a,
+.lab-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    background: #8c1d1d;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.lab-actions a:hover,
+.lab-actions button:hover {
+    background: #6c1212;
+}
